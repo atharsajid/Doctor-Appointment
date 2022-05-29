@@ -87,12 +87,12 @@ class _DoctorLoginState extends State<DoctorLogin> {
                           if (emailcontroller.text.isNotEmpty &&
                               passcontroller.text.isNotEmpty) {
                             signin();
-                          }else{
-                             ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text("All Fields are required"),
-                                ),
-                              );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text("All Fields are required"),
+                              ),
+                            );
                           }
                         },
                         icon: const Icon(Icons.arrow_forward),
@@ -112,7 +112,8 @@ class _DoctorLoginState extends State<DoctorLogin> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DoctorRegistor()));
+                                  builder: (context) =>
+                                      const DoctorRegistor()));
                         },
                         child: const Text(
                           'Sign Up',
@@ -149,17 +150,17 @@ class _DoctorLoginState extends State<DoctorLogin> {
           .signInWithEmailAndPassword(
               email: emailcontroller.text, password: passcontroller.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Write your email and password correctly"),
           ),
         );
       } else if (e.code == 'wrong-password') {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Write password correctly"),
           ),
         );

@@ -127,7 +127,7 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                                             password: passcontroller.text);
                                 patient();
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                     content: Text(
                                         "Your account created successfully"),
                                   ),
@@ -138,14 +138,14 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                               } on FirebaseAuthException catch (e) {
                                 if (e.code == 'weak-password') {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                       content: Text(
                                           'The password provided is too weak.'),
                                     ),
                                   );
                                 } else if (e.code == 'email-already-in-use') {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                       content: Text(
                                           'The account already exists for that email.'),
                                     ),
@@ -156,7 +156,7 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                               }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text("All Fields are required"),
                                 ),
                               );
@@ -177,7 +177,7 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PatientLogin()));
+                                  builder: (context) => const PatientLogin()));
                         },
                         child: const Text(
                           'Login',

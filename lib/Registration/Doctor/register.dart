@@ -174,7 +174,7 @@ class _DoctorRegistorState extends State<DoctorRegistor> {
                                             password: passcontroller.text);
                                 doctor();
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                     content: Text(
                                         "Your account created successfully"),
                                   ),
@@ -187,14 +187,14 @@ class _DoctorRegistorState extends State<DoctorRegistor> {
                               } on FirebaseAuthException catch (e) {
                                 if (e.code == 'weak-password') {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                       content: Text(
                                           'The password provided is too weak.'),
                                     ),
                                   );
                                 } else if (e.code == 'email-already-in-use') {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                       content: Text(
                                           'The account already exists for that email.'),
                                     ),
@@ -205,7 +205,7 @@ class _DoctorRegistorState extends State<DoctorRegistor> {
                               }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
+                                const SnackBar(
                                   content: Text("All Fields are required"),
                                 ),
                               );
@@ -224,7 +224,7 @@ class _DoctorRegistorState extends State<DoctorRegistor> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DoctorLogin()));
+                                  builder: (context) => const DoctorLogin()));
                         },
                         child: const Text(
                           'Login',

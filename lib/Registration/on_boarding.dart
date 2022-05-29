@@ -81,7 +81,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24)),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Doctor',
                     style: TextStyle(
                       fontSize: 18,
@@ -116,7 +116,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(24)),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Patient',
                     style: TextStyle(
                       fontSize: 18,

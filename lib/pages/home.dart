@@ -8,29 +8,34 @@ import 'doctor_page.dart';
 import 'home_page.dart';
 
 class Home extends StatefulWidget {
-  const Home({ Key? key }) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  List<Widget> _pages = [HomePage(), DoctorPage(), ChatPage(), Container(), Container()];
+  final List<Widget> _pages = [
+    const HomePage(),
+    const DoctorPage(),
+    const ChatPage(),
+    Container(),
+    Container()
+  ];
 
   int _currentIndex = 0;
-  PageController _pageController = new PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox.expand(
         child: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
-            setState(() => _currentIndex = index);
-          },
-          children: _pages
-        ),
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() => _currentIndex = index);
+            },
+            children: _pages),
       ),
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
@@ -40,38 +45,32 @@ class _HomeState extends State<Home> {
         },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            activeColor: primary,
-            inactiveColor: Colors.black,
-            title: Text('Home'),
-            icon: Icon(Icons.home)
-          ),
+              activeColor: primary,
+              inactiveColor: Colors.black,
+              title: const Text('Home'),
+              icon: const Icon(Icons.home)),
           BottomNavyBarItem(
-            activeColor: primary,
-            inactiveColor: Colors.black,
-            title: Text('Doctor'),
-            icon: Icon(Icons.medical_services_rounded)
-          ),
+              activeColor: primary,
+              inactiveColor: Colors.black,
+              title: const Text('Doctor'),
+              icon: const Icon(Icons.medical_services_rounded)),
           BottomNavyBarItem(
-            activeColor: primary,
-            inactiveColor: Colors.black,
-            title: Text('Chat'),
-            icon: Icon(CupertinoIcons.chat_bubble_2_fill)
-          ),
+              activeColor: primary,
+              inactiveColor: Colors.black,
+              title: const Text('Chat'),
+              icon: const Icon(CupertinoIcons.chat_bubble_2_fill)),
           BottomNavyBarItem(
-            activeColor: primary,
-            inactiveColor: Colors.black,
-            title: Text('Booking'),
-            icon: Icon(Icons.event_note_rounded)
-          ),
+              activeColor: primary,
+              inactiveColor: Colors.black,
+              title: const Text('Booking'),
+              icon: const Icon(Icons.event_note_rounded)),
           BottomNavyBarItem(
-            activeColor: primary,
-            inactiveColor: Colors.black,
-            title: Text('Account'),
-            icon: Icon(Icons.manage_accounts_rounded)
-          ),
+              activeColor: primary,
+              inactiveColor: Colors.black,
+              title: const Text('Account'),
+              icon: const Icon(Icons.manage_accounts_rounded)),
         ],
       ),
     );
   }
-
 }
